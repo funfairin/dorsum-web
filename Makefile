@@ -1,7 +1,10 @@
-all: dorsum-web
+all: spec release
 
-shards: lib
+lib:
 	shards
+
+spec: lib main.cr src/**/*.cr
+	crystal spec
 
 dorsum-web: lib main.cr src/**/*.cr
 	crystal build --error-trace -o dorsum-web main.cr
@@ -18,6 +21,6 @@ clean:
 
 PREFIX ?= /usr/local
 
-install: dorsum
+install: release
 	install -d $(PREFIX)/bin
 	install dorsum-web $(PREFIX)/bin
