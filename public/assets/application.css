@@ -10,8 +10,10 @@ body, a {
   color: #999;
 }
 a {
+  display: inline-block;
   background-color: #000;
   padding: 2px;
+  margin: 1px;
   text-decoration: none;
 }
 a:hover, a:active {
