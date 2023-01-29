@@ -13,7 +13,7 @@
       element.href = "?last-event-id=" + event.lastEventId
     })
     if (data['arrived-at']) {
-      var arrival_at = new Date(data['arrived-at'])
+      var arrival_at = new Date(parseInt(data['arrived-at']))
       arrival_at = new Date(arrival_at - arrival_at.getTimezoneOffset() - offset)
       arrival.querySelectorAll('span').forEach((element) => {
         element.appendChild(document.createTextNode(
