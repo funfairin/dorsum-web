@@ -17,7 +17,7 @@
       arrival_at = new Date(arrival_at - arrival_at.getTimezoneOffset() - offset)
       arrival.querySelectorAll('span').forEach((element) => {
         element.appendChild(document.createTextNode(
-          arrival_at.getHours() + ':' + arrival_at.getMinutes()
+          arrival_at.toLocaleTimeString('en-US', { hour: '2-digit', minute:'2-digit' })
         ))
       })
     }
